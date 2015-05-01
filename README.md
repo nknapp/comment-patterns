@@ -2,6 +2,10 @@
 
 > A list of comment-patterns for different languages
 
+This module contains an extract of the [language-database of `groc`](http://nevir.github.io/groc/languages.html)
+with information about how single- and multi-line comments are written in different languages.
+
+
 ## Usage
 
 ```js
