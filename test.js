@@ -1,2 +1,11 @@
 var lc = require("./");
-console.log(lc.byFileName("test.hbs"));
+var assert = require("assert");
+
+assert.deepEqual(
+    lc("test.hbs"),
+    {
+        name: 'Handlebars',
+        nameMatchers: ['.handlebars', '.hbs'],
+        multiLineComment: ['<!--', '', '-->', '{{!', '', '}}']
+    }
+);
