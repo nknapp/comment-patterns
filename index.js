@@ -9,7 +9,7 @@ var _ = require("lodash");
  * @returns {object} the comment-patterns
  * @api public
  */
-module.exports = function (filename) {
+function commentPattern(filename) {
     var ext = path.extname(filename);
     return _.find(db, function (item) {
         return _.any(item.nameMatchers, function (matcher) {
@@ -21,3 +21,5 @@ module.exports = function (filename) {
         });
     });
 };
+
+module.exports = commentPattern;

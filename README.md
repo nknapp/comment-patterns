@@ -5,12 +5,11 @@
 This module contains an extract of the [language-database of `groc`](http://nevir.github.io/groc/languages.html)
 with information about how single- and multi-line comments are written in different languages.
 
-
 ## Usage
 
 ```js
-var patterns = require('comment-patterns');
-var p = patterns('filename.hbs');
+var commentPattern = require('comment-patterns');
+var p = commentPattern('filename.hbs');
 
 /*
 Result:
@@ -22,6 +21,8 @@ Result:
 */
 ```
 
+### [commentPattern](index.js#L13)
+
 Load the comment-pattern for a given file.
 The file-language is determined by the file-extension.
 
@@ -30,7 +31,7 @@ The file-language is determined by the file-extension.
 * **{string}**: filename the name of the file    
 * `returns` **{object}**: the comment-patterns
 
-# Update the `groc`-language-database
+# Updating the language-database
 
 ```bash
 npm i -d && npm run-script update-db
@@ -43,13 +44,6 @@ Install dev dependencies:
 ```bash
 npm i -d && npm test
 ```
-
-## Author
-
-**Nils Knappmeier**
-
-[github/undefined](https://github.com/undefined)
-[twitter/undefined](http://twitter.com/undefined)
 
 ## License
 
