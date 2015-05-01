@@ -13,18 +13,14 @@ var p = commentPattern('filename.hbs');
 
 /*
 Result:
- {
-    name: 'Handlebars',
-    nameMatchers: ['.handlebars', '.hbs'],
-        {
-            name: 'Handlebars',
-            nameMatchers: ['.handlebars', '.hbs'],
-            multiLineComment: [
-                {start: '<!--', middle: '', end: '-->'},
-                {start: '{{!', middle: '', end: '}}'}
-            ]
-        }
-}
+    {
+         name: 'Handlebars',
+         nameMatchers: ['.handlebars', '.hbs'],
+         multiLineComment: [
+             {start: '<!--', middle: '', end: '-->'},
+             {start: '{{!', middle: '', end: '}}'}
+         ]
+    }
 */
 ```
 
