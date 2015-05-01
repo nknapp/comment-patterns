@@ -6,7 +6,7 @@ var groc = require("groc");
 var fs = require("fs");
 var path = require("path");
 
-var databaseDir = path.resolve(__dirname, "..", "lang-db")
+var databaseDir = path.resolve(__dirname, "..", "lang-db");
 /**
  * At first, we create a simple array of specs (from the `groc`-languages file).
  * The array can be transformed later to improved performance.
@@ -17,7 +17,7 @@ var baseSpec = _.map(groc.LANGUAGES, function (spec, key) {
         name: key,
         nameMatchers: spec.nameMatchers,
         commentsOnly: spec.commentsOnly,
-        multiLineComment: spec.multiLineComment,
+        multiLineComment: convertMultilineComments(spec.multiLineComment),
         singleLineComment: spec.singleLineComment
     };
     Object.keys(result).forEach(function (resultKey) {
@@ -27,6 +27,25 @@ var baseSpec = _.map(groc.LANGUAGES, function (spec, key) {
     });
     return result;
 });
+
+/**
+ * Convert 3-tuples for multi-line-comments from groc-format into a
+ * more readble object representation
+ */
+function convertMultilineComments(multiLineComment) {
+    if (_.isUndefined(multiLineComment)) {
+        return undefined;
+    }
+    var newMultiLineComment = [];
+    for (var i = 0; i < multiLineComment.length; i += 3) {
+        newMultiLineComment.push({
+            start: multiLineComment[i],
+            middle: multiLineComment[i + 1],
+            end: multiLineComment[i + 2]
+        });
+    }
+    return newMultiLineComment;
+}
 
 /**
  * Use `json-literal` to write the modified JS into a file.
