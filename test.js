@@ -6,6 +6,9 @@ assert.deepEqual(
     {
         name: 'Handlebars',
         nameMatchers: ['.handlebars', '.hbs'],
-        multiLineComment: ['<!--', '', '-->', '{{!', '', '}}']
+        multiLineComment: [
+            {start: '<!--', middle: '', end: '-->'},
+            {start: '{{!', middle: '', end: '}}'}
+        ]
     }
 );

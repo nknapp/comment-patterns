@@ -16,7 +16,14 @@ Result:
  {
     name: 'Handlebars',
     nameMatchers: ['.handlebars', '.hbs'],
-    multiLineComment: ['<!--', '', '-->', '{{!', '', '}}']
+        {
+            name: 'Handlebars',
+            nameMatchers: ['.handlebars', '.hbs'],
+            multiLineComment: [
+                {start: '<!--', middle: '', end: '-->'},
+                {start: '{{!', middle: '', end: '}}'}
+            ]
+        }
 }
 */
 ```
@@ -28,7 +35,7 @@ The file-language is determined by the file-extension.
 
 **Params**
 
-* **{string}**: filename the name of the file    
+* `filename` **{string}**: the name of the file    
 * `returns` **{object}**: the comment-patterns
 
 # Updating the language-database
