@@ -40,7 +40,7 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.c`  `.h` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `//`
 
@@ -48,7 +48,7 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.cpp`  `.hpp`  `.c++`  `.h++`  `.cc`  `.hh`  `.cxx`  `.hxx` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `//`
 
@@ -56,13 +56,13 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.css` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 ### CSharp
 
 * Name-Matchers:  `.cs` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `//`
 
@@ -76,11 +76,11 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.coffee`  `Cakefile` 
 
-* Multi-line comment: `###*`, ` *`, ` ###`
+* Multi-line comment: `###*`, `  *`, ` ###`
 
-* Multi-line comment: `###`, `#`, `###`
+* Multi-line comment: `###`, ` #`, `###`
 
-* Multi-line comment: `###*`, `#`, `###`
+* Multi-line comment: `###*`, ` #`, `###`
 
 * Single-line comment: `#`
 
@@ -94,15 +94,15 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.htm`  `.html` 
 
-* Multi-line comment: `<!--`, ``, `-->`
+* Multi-line comment: `<!--`, ` `, `-->`
 
 ### Handlebars
 
 * Name-Matchers:  `.handlebars`  `.hbs` 
 
-* Multi-line comment: `<!--`, ``, `-->`
+* Multi-line comment: `<!--`, ` `, `-->`
 
-* Multi-line comment: `{{!`, ``, `}}`
+* Multi-line comment: `{{!`, ` `, `}}`
 
 ### Haskell
 
@@ -118,9 +118,9 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.jsp` 
 
-* Multi-line comment: `<!--`, ``, `-->`
+* Multi-line comment: `<!--`, ` `, `-->`
 
-* Multi-line comment: `<%--`, ``, `--%>`
+* Multi-line comment: `<%--`, ` `, `--%>`
 
 ### Jade
 
@@ -140,7 +140,7 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.java` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `//`
 
@@ -148,7 +148,7 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.js` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `//`
 
@@ -168,7 +168,7 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.ls`  `Slakefile` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `#`
 
@@ -194,13 +194,13 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.mustache` 
 
-* Multi-line comment: `{{!`, ``, `}}`
+* Multi-line comment: `{{!`, ` `, `}}`
 
 ### Objective-C
 
 * Name-Matchers:  `.m`  `.mm` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `//`
 
@@ -238,7 +238,7 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.scss` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `//`
 
@@ -264,7 +264,7 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.swift` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `//`
 
@@ -272,7 +272,7 @@ The file-language is determined by the file-extension.
 
 * Name-Matchers:  `.ts` 
 
-* Multi-line comment: `/*`, `*`, `*/`
+* Multi-line comment: `/*`, ` *`, `*/`
 
 * Single-line comment: `//`
 
