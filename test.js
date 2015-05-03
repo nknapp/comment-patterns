@@ -39,6 +39,16 @@ describe("comment-patterns", function () {
                 singleLineComment: ['//']
             }
         );
+    });
+
+    it("should work for php. The regex-matcher should be replaced by string-matchers", function () {
+        patterns("test.php3").should.eql(
+            {
+                name: 'PHP',
+                nameMatchers: ['.php', '.php3', '.php4', '.php5', '.fbp'],
+                singleLineComment: ['//']
+            }
+        );
     })
 
 });
