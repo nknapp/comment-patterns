@@ -36,6 +36,11 @@ The file-language is determined by the file-extension.
 
 ## The database
 
+The language-specification can be found in the 
+`languages`-directory. There is one file
+for each language. The actual databases will be
+created from these files on `prepublish`.
+
 ### C
 
 * Name-Matchers:  `.c`  `.h` 
@@ -284,9 +289,17 @@ The file-language is determined by the file-extension.
 
 ## Updating the language-database
 
+The language-specifications where initially pulled from the  
+[language-database of `groc`](http://nevir.github.io/groc/languages.html)
+but are now maintained in this paths. It may still be good to pull an update
+from `groc`, which can be done by the following command:
+
 ```bash
-npm i -d && npm run-script languagesupdate-db
+npm i -d && npm run-script update-from-groc
 ```
+
+**Please be careful when doing this: Language-specifications may have been changed manually,
+so be careful not to override any changed files.**
 
 ## Run tests
 
