@@ -1,32 +1,32 @@
 {
-    "name": "comment-patterns",
-    "version": "0.0.8",
-    "description": "A list of comment-patterns for different languages",
-    "main": "index.js",
-    "scripts": {
-        "test": "mocha",
-        "prepublish": "node build/generate-db.js",
-        "update-from-groc": "node build/update-from-groc.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/nknapp/language-comments.git"
-    },
-    "author": "Nils Knappmeier",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/nknapp/language-comments/issues"
-    },
-    "homepage": "https://github.com/nknapp/language-comments",
-    "devDependencies": {
-        "groc": "^0.8.0",
-        "json-literal": "^1.1.0",
-        "json-stable-stringify": "^1.0.0",
-        "mocha": "^2.2.4",
-        "should": "^6.0.1",
-        "verb": "^0.7.4"
-    },
-    "dependencies": {
-        "lodash": "^3.8.0"
-    }
+  "name": "comment-patterns",
+  "version": "0.1.0",
+  "description": "A list of comment-patterns for different languages",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "prepublish": "node build/generate-db.js",
+    "update-from-groc": "node build/update-from-groc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nknapp/language-comments.git"
+  },
+  "author": "Nils Knappmeier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nknapp/language-comments/issues"
+  },
+  "homepage": "https://github.com/nknapp/language-comments",
+  "devDependencies": {
+    "groc": "^0.8.0",
+    "json-literal": "^1.1.0",
+    "json-stable-stringify": "^1.0.0",
+    "mocha": "^2.2.4",
+    "should": "^6.0.1",
+    "verb": "^0.7.4"
+  },
+  "dependencies": {
+    "lodash": "^3.8.0"
+  }
 }
