@@ -5,8 +5,10 @@ var groc = require("groc");
 
 var fs = require("fs");
 var path = require("path");
+var writeJS = require("./write");
 
-var databaseDir = path.resolve(__dirname, "..", "lang-db");
+
+var databaseDir = path.resolve(__dirname, "..", "languages");
 /**
  * At first, we create a simple array of specs (from the `groc`-languages file).
  * The array can be transformed later to improved performance.
@@ -50,17 +52,21 @@ function convertMultilineComments(multiLineComment) {
     return newMultiLineComment;
 }
 
-/**
- * Use `json-literal` to write the modified JS into a file.
- * @type {stringify}
- */
-var stringify = require("json-literal").stringify;
 if (!fs.existsSync(databaseDir)) {
     fs.mkdirSync(databaseDir);
 }
-var license = fs.readFileSync(require.resolve("groc/MIT-LICENSE.txt"), "utf-8");
-license = "/**\n * " + license.split("\n").join("\n * ") + "\n */\n";
 
-var dbFile = path.join(databaseDir, "lang.js");
-fs.writeFileSync(dbFile, license + "module.exports = " + stringify(baseSpec) + ";\n");
+// Copy the license file
+var grocLicense = require.resolve("groc/MIT-LICENSE.txt");
+var grocLicenseTarget = path.join(databaseDir, "_LICENSE.txt");
+fs.createReadStream(grocLicense)
+    .pipe(fs.createWriteStream(grocLicenseTarget));
+
+
+baseSpec.forEach(function (lang) {
+    var targetFile = lang.name.replace(/\+/g, "plus").toLowerCase() + ".js";
+    writeJS(lang, path.join(databaseDir, targetFile));
+});
+
+// Create optimized versions
 

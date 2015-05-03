@@ -1,6 +1,7 @@
 var path = require("path");
-var db = require("./lang-db/lang.js");
 var _ = require("lodash");
+var base = require("./db-generated/base.js");
+var byMatcher = require("./db-generated/by-matcher.js");
 
 /**
  * Load the comment-pattern for a given file.
@@ -10,21 +11,16 @@ var _ = require("lodash");
  * @api public
  */
 function commentPattern(filename) {
-    var ext = path.extname(filename);
-    return _.chain(db)
-        .find(function (item) {
-            return _.any(item.nameMatchers, function (matcher) {
-                if (_.isRegExp(matcher)) {
-                    return ext.match(matcher);
-                } else if (_.isString(matcher)) {
-                    return ext === matcher;
-                }
-            })
-        })
-        .cloneDeep()
-        .value();
-
-
+    // Look for whole filename and for extension ("Makefile" is not an extesion,
+    // but should be matched to the appropriate file
+    var index = byMatcher[filename];
+    if (_.isUndefined(index)) {
+        index = byMatcher[path.extname(filename)];
+    }
+    if (_.isUndefined(index)) {
+        throw new Error("Cannot find language definition for '" + filename + "'");
+    }
+    return _.cloneDeep(base[index]);
 }
 
 module.exports = commentPattern;
