@@ -10,11 +10,13 @@ var fs = require("fs");
 function writeJS(obj, file) {
     var node = stringify(obj).replace(/^\((.*)\)$/, "$1");
     var string = esformatter.format("module.exports = " + node + ";");
+    console.log("Writing ",file);
     fs.writeFileSync(
         file,
         string,
         "utf-8"
     );
+    console.log("done");
 }
 
 module.exports = writeJS;
