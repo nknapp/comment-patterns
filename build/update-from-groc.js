@@ -65,7 +65,7 @@ fs.createReadStream(grocLicense)
 
 baseSpec.forEach(function (lang) {
     var targetFile = lang.name.replace(/\+/g, "plus").toLowerCase() + ".js";
-    writeJS(lang, path.join(databaseDir, targetFile));
+    writeJS(lang, path.join(databaseDir, targetFile),true);
 });
 
 // Create optimized versions
