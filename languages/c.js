@@ -3,7 +3,7 @@ module.exports = {
     nameMatchers: [".c", ".h"],
     multiLineComment: [{
         start: /\/\*\*?/,
-        middle: "*",
+        middle: / ?\*/,
         end: "*/"
     }],
     singleLineComment: ["//"]

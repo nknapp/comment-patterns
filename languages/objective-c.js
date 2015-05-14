@@ -1,10 +1,6 @@
 module.exports = {
     name: "Objective-C",
     nameMatchers: [".m", ".mm"],
-    multiLineComment: [{
-        start: /\/\*\*?/,
-        middle: "*",
-        end: "*/"
-    }],
-    singleLineComment: ["//"]
+    multiLineComment: require("./c.js").multiLineComment,
+    singleLineComment: require("./c.js").singleLineComment
 };

@@ -1,9 +1,5 @@
 module.exports = {
     name: "CSS",
     nameMatchers: [".css"],
-    multiLineComment: [{
-        start: /\/\*\*?/,
-        middle: "*",
-        end: "*/"
-    }]
+    multiLineComment: require("./c.js").multiLineComment
 };

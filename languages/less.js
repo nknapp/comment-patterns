@@ -1,5 +1,5 @@
 module.exports = {
     name: "LESS",
     nameMatchers: [".less"],
-    singleLineComment: ["//"]
+    singleLineComment: require("./c.js").singleLineComment
 };

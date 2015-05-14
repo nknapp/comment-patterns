@@ -1,10 +1,6 @@
 module.exports = {
     name: "SCSS",
     nameMatchers: [".scss"],
-    multiLineComment: [{
-        start: /\/\*\*?/,
-        middle: "*",
-        end: "*/"
-    }],
-    singleLineComment: ["//"]
+    multiLineComment: require("./c.js").multiLineComment,
+    singleLineComment: require("./c.js").singleLineComment
 };

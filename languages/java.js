@@ -1,10 +1,6 @@
 module.exports = {
     name: "Java",
     nameMatchers: [".java"],
-    multiLineComment: [{
-        start: /\/\*\*?/,
-        middle: "*",
-        end: "*/"
-    }],
-    singleLineComment: ["//"]
+    multiLineComment: require("./c.js").multiLineComment,
+    singleLineComment: require("./c.js").singleLineComment
 };

@@ -1,5 +1,5 @@
 module.exports = {
     name: "Sass",
     nameMatchers: [".sass"],
-    singleLineComment: ["//"]
+    singleLineComment: require("./c.js").singleLineComment
 };
