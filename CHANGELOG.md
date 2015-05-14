@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## v0.2.0 - 2015-05-14
 ### Changed
 - Some comment delimiters are now regexes rather than strings
+- Middle-prefix for C-like languages now allows a preceeding whitespace.
 
 ### Added
 - Method `.regex` creates regular expressions that match comments
