@@ -1,5 +1,5 @@
 module.exports = {
-  name: "YAML",
-  nameMatchers: [".yml", ".yaml"],
-  singleLineComment: ["#"]
+    name: "YAML",
+    nameMatchers: [".yml", ".yaml"],
+    singleLineComment: ["#"]
 };

@@ -1,9 +1,9 @@
 module.exports = {
-  name: "CSS",
-  nameMatchers: [".css"],
-  multiLineComment: [{
-    start: "/*",
-    middle: "*",
-    end: "*/"
-  }]
+    name: "CSS",
+    nameMatchers: [".css"],
+    multiLineComment: [{
+        start: /\/\*\*?/,
+        middle: "*",
+        end: "*/"
+    }]
 };

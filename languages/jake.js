@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Jake",
-  nameMatchers: [".jake"],
-  singleLineComment: ["//"]
+    name: "Jake",
+    nameMatchers: [".jake"],
+    singleLineComment: ["//"]
 };

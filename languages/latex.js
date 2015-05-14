@@ -1,5 +1,5 @@
 module.exports = {
-  name: "LaTeX",
-  nameMatchers: [".tex", ".latex", ".sty"],
-  singleLineComment: ["%"]
+    name: "LaTeX",
+    nameMatchers: [".tex", ".latex", ".sty"],
+    singleLineComment: ["%"]
 };

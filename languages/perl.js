@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Perl",
-  nameMatchers: [".pl", ".pm"],
-  singleLineComment: ["#"]
+    name: "Perl",
+    nameMatchers: [".pl", ".pm"],
+    singleLineComment: ["#"]
 };

@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Sass",
-  nameMatchers: [".sass"],
-  singleLineComment: ["//"]
+    name: "Sass",
+    nameMatchers: [".sass"],
+    singleLineComment: ["//"]
 };

@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Make",
-  nameMatchers: ["Makefile"],
-  singleLineComment: ["#"]
+    name: "Make",
+    nameMatchers: ["Makefile"],
+    singleLineComment: ["#"]
 };

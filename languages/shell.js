@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Shell",
-  nameMatchers: [".sh"],
-  singleLineComment: ["#"]
+    name: "Shell",
+    nameMatchers: [".sh"],
+    singleLineComment: ["#"]
 };

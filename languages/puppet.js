@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Puppet",
-  nameMatchers: [".pp"],
-  singleLineComment: ["#"]
+    name: "Puppet",
+    nameMatchers: [".pp"],
+    singleLineComment: ["#"]
 };

@@ -3,14 +3,10 @@ module.exports = {
   nameMatchers: [".coffee", "Cakefile"],
   multiLineComment: [{
     start: "###*",
-    middle: " *",
-    end: " ###"
-  }, {
-    start: "###",
-    middle: "#",
+    middle: / \*|#/,
     end: "###"
   }, {
-    start: "###*",
+    start: "###",
     middle: "#",
     end: "###"
   }],

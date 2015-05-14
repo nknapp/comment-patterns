@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Go",
-  nameMatchers: [".go"],
-  singleLineComment: ["//"]
+    name: "Go",
+    nameMatchers: [".go"],
+    singleLineComment: ["//"]
 };

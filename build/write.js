@@ -12,7 +12,9 @@ function writeJS(obj, file,pretty) {
     var node = stringify(obj).replace(/^\((.*)\)$/, "$1");
     var string = "module.exports = " + node + ";";
     if (pretty) {
-        string = esformatter.format(string);
+        string = esformatter.format(string,{
+            indent: '    '
+        });
     }
     console.log("Writing ",file);
     fs.writeFileSync(
