@@ -2,7 +2,7 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Upcoming
+## v0.3.0 - 2015-05-15
 ### Changed
 - Next-line-of-code is not matched anymode. The client has to extract the code itself.
   The line-number is still computed.
