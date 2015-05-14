@@ -54,15 +54,13 @@ describe("comment-patterns", function () {
 });
 
 describe("comment-patterns.regex", function () {
-    it("should provide a regex that matches a comment", function () {
+    it("should provide a regex that matches a multi-line-comment", function () {
         var r = patterns.regex("test.js");
         var match = r.regex.exec(" /**\n  * Test\n  */\ncode\n");
         match[r.cg.indent].should.eql(" ");
         match[r.cg.wholeComment].should.eql("/**\n  * Test\n  */");
         match[r.cg.contentStart].should.eql("\n  * Test\n  ");
         should.not.exist(match[r.cg.contentStart + 1]);
-        match[r.cg.beforeCode].should.eql("\n");
-        match[r.cg.code].should.eql("code");
     });
 
     it("should provide a regex that matches a single-line-comment", function() {
@@ -72,8 +70,6 @@ describe("comment-patterns.regex", function () {
         match[r.cg.wholeComment].should.eql("// line 1\n// line 2\n");
         should.not.exist(match[r.cg.contentStart]);
         match[r.cg.contentStart+1].should.eql("// line 1\n// line 2\n");
-        match[r.cg.beforeCode].should.eql("");
-        match[r.cg.code].should.eql("code");
     });
 
     it("should provide a regex that matches a single-line-comment with indent", function() {
@@ -83,8 +79,6 @@ describe("comment-patterns.regex", function () {
         match[r.cg.wholeComment].should.eql("// line 1\n // line 2\n");
         should.not.exist(match[r.cg.contentStart]);
         match[r.cg.contentStart+1].should.eql(" // line 1\n // line 2\n");
-        match[r.cg.beforeCode].should.eql("");
-        match[r.cg.code].should.eql("code");
     });
 });
 

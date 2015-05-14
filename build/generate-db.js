@@ -29,8 +29,6 @@ function q(regexOrString) {
 
 var regexSpec = languages.map(function (pattern) {
 
-
-
     // Parts of the regex that match multiline comments
     var multiLineComment = pattern.multiLineComment || [];
     var middle = [];
@@ -56,8 +54,8 @@ var regexSpec = languages.map(function (pattern) {
         "^([ \\t]*)" +
             // This part matches the contents
         "(" + boundaries.join("|") + ")" +
-            // Match the line-of-code following the comment
-        "([\\r\\n]*)(.*)"
+            // Match trailing new-lines to determine start the start of the next code-line.
+        "[\\r\\n]*"
         , "mg"
     );
 
@@ -72,11 +70,7 @@ var regexSpec = languages.map(function (pattern) {
         // the whole comment (including start-end pattern)
         wholeComment: ++cgi,
         // capture groups for the contents of the comment contents begin with this index (boundaries)
-        contentStart: ++cgi,
-        // the newline-chars between comment and next line of code
-        beforeCode: (cgi = cgi + boundaries.length),
-        // the next line of code
-        code: ++cgi
+        contentStart: ++cgi
     };
 
     return {
