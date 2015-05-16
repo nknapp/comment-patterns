@@ -1,10 +1,6 @@
 module.exports = {
     name: "C",
     nameMatchers: [".c", ".h"],
-    multiLineComment: [{
-        start: /\/\*\*?/,
-        middle: / ?\*/,
-        end: "*/"
-    }],
-    singleLineComment: ["//"]
+    multiLineComment: require("./common/c-style.js").multiLine(),
+    singleLineComment: require("./common/c-style.js").singleLine()
 };

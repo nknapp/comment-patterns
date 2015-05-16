@@ -1,6 +1,6 @@
 module.exports = {
     name: "LiveScript",
     nameMatchers: [".ls", "Slakefile"],
-    multiLineComment: require("./c.js").multiLineComment,
+    multiLineComment: require("./common/c-style.js").multiLine(),
     singleLineComment: ["#"]
 };

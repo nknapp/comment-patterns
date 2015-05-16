@@ -1,6 +1,6 @@
 module.exports = {
     name: "CSharp",
     nameMatchers: [".cs"],
-    multiLineComment: require("./c.js").multiLineComment,
-    singleLineComment: require("./c.js").singleLineComment
+    multiLineComment: require("./common/c-style.js").multiLine(),
+    singleLineComment: require("./common/c-style.js").singleLine()
 };
