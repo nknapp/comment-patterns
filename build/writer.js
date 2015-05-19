@@ -16,6 +16,7 @@ function Writer(data) {
      */
     this.pretty = function () {
         prettyPrint = true;
+        return this;
     };
 
     /**
@@ -27,13 +28,15 @@ function Writer(data) {
         // Remove wrapping parens which are always created by json-literal
         var node = stringify(data).replace(/^\((.*)\)$/, "$1");
         // Create a valid javascript module
-        var string = "module.exports = " + node + ";";
+        var string = "module.exports = function() { return " + node + "};";
         // If prettyprint is enabled, use esformatter to format
         // the resulting javascript.
         if (prettyPrint) {
             string = esformatter.format(string, {
                 // indent is hard coded to 4 spaces at the moment
-                indent: '    '
+                indent: {
+                    value: '    '
+                }
             });
         }
         // Write the data...
