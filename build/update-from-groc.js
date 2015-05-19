@@ -5,7 +5,7 @@ var groc = require("groc");
 
 var fs = require("fs");
 var path = require("path");
-var writeJS = require("./write");
+var Writer = require("./writer");
 
 
 var databaseDir = path.resolve(__dirname, "..", "languages");
@@ -65,7 +65,7 @@ fs.createReadStream(grocLicense)
 
 baseSpec.forEach(function (lang) {
     var targetFile = lang.name.replace(/\+/g, "plus").toLowerCase() + ".js";
-    writeJS(lang, path.join(databaseDir, targetFile),true);
+    new Writer(lang).pretty().writeTo(databaseDir, targetFile);
 });
 
 // Create optimized versions

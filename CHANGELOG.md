@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Upcoming
+### Fix
+- Consecutive indented lines of single-line-comments are now recognized 
+  as a single comment by regexes
+-
+
 ## v0.3.0 - 2015-05-15
 ### Changed
 - Next-line-of-code is not matched anymode. The client has to extract the code itself.

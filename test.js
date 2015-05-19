@@ -78,7 +78,7 @@ describe("comment-patterns.regex", function () {
         match[r.cg.indent].should.eql(" ");
         match[r.cg.wholeComment].should.eql("// line 1\n // line 2\n");
         should.not.exist(match[r.cg.contentStart]);
-        match[r.cg.contentStart+1].should.eql(" // line 1\n // line 2\n");
+        match[r.cg.contentStart+1].should.eql("// line 1\n // line 2\n");
     });
 });
 

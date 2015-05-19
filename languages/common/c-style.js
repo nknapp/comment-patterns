@@ -5,7 +5,7 @@
 module.exports.multiLine = function() {
     return [{
         start: /\/\*\*?/,
-        middle: / ?\*/,
+        middle: "*",
         end: "*/"
     }];
 };
