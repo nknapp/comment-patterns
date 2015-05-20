@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Upcoming
+### Fix
+- Remove "function()" from generated database files. This lead to an error in the test cases.
+
 ## v0.4.0 - 2015-05-20
 ### Fix
 - Consecutive indented lines of single-line-comments are now recognized 

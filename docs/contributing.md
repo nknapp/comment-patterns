@@ -51,4 +51,18 @@ is called like `Array#map` for each entry in the database.
 Simple transform- and index-functions can be included in `generate-db.js`. More complex ones 
 should be put in a separate file in the `variations` directory.
 
+## Updating the language-database
+
+The language-specifications where initially pulled from the  
+[language-database of `groc`](http://nevir.github.io/groc/languages.html).
+It may still be good to pull an update
+from `groc`, which can be done by the following command:
+
+```bash                                        
+npm i -d && npm run-script update-from-groc
+```
+
+**Please be careful when doing this: Language-specifications may have been changed manually,
+so be careful not to commit any changed files.**
+
 

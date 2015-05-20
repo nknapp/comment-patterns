@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node build/generate-db.js && mocha",
-    "prepublish": "node build/generate-db.js",
+    "prepublish": "verb && node build/generate-db.js",
     "update-from-groc": "node build/update-from-groc.js"
   },
   "repository": {
