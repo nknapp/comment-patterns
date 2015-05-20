@@ -5,26 +5,74 @@
 This module contains an extract of the [language-database of `groc`](http://nevir.github.io/groc/languages.html)
 with information about how single- and multi-line comments are written in different languages.
 
-"abc"
-
-## Usage
+## Basic usage
 
 ```js
 var commentPattern = require('comment-patterns');
-var p = commentPattern('filename.hbs');
-
-/*
-Result:
-    {
-         name: 'Handlebars',
-         nameMatchers: ['.handlebars', '.hbs'],
-         multiLineComment: [
-             {start: '<!--', middle: '', end: '-->'},
-             {start: '{{!', middle: '', end: '}}'}
-         ]
-    }
-*/
+var p = commentPattern('filename.js');
 ```
+This will lead to `p` being: 
+
+```js
+{
+  name: "JavaScript",
+  nameMatchers: [".js"],
+  multiLineComment: [{
+    start: /\/\*\*?/,
+    middle: "*",
+    end: "*/"
+  }],
+  singleLineComment: ["//"]
+}
+```
+
+* **name** is the name of the language
+* **nameMatchers** is an array of file extensions of filenames that 
+  files in this language usually have.
+* **multiLineComment** is an array of patterns for comments that may span multiple lines
+  * **start** is the beginning of a comment
+  * **middle** is a character of a regex that occurs in front of each comment line
+  * **end* marks the end of the comment
+* **singleLineComment** is the prefix of comments that go until the end of the line
+
+## Variation (regex)
+
+It is also possible to retrieve a regular expression that matches comments
+(up to the next line of code):
+
+```js
+var re = commentPattern.regex('filename.js');
+```
+The result `re` will be:
+
+```js
+{
+  regex: /^([ \t]*)(\/\*\*?([\s\S]*?)\*\/|((?:[ \t]*?\/\/.*\r?\n?)+))[\r\n]*/gm,
+  cg: {
+    indent: 1,
+    wholeComment: 2,
+    contentStart: 3
+  },
+  middle: [/^[ \t]*\*/gm, /^[ \t]*\/\//gm],
+  name: "JavaScript"
+}
+```
+
+* **regex** is the actual regular expression. It matches the comments in a string,
+  including any empty lines after the comment.
+* **cg** are constant values refering to capturing groups of the regex.
+  * `match[cg.indent]` contains the spaces that indent comment-start-delimiter.
+  * `match[cg.wholeComment]` matches the comment including delimiters.
+  * `match[cg.contentStart]` is the first group that captures the contents of the comment
+    In this case, there are multiple possible delimiters, so dependending on which 
+    delimiter is used, `match[cg.contentStart]` or `match[cg.contentStart + 1]` is
+    filled. the others are undefined.
+* **middle** contains one pattern for each group after `cg.contentStart` that matches
+  the prefix used before comment lines. It can be used to remove this prefix.
+  If the middle-prefix for this capturing group is empty (`''`), the pattern is `null`.
+* **name** is the language name for debugging purposes.  
+
+## Reference
 
 ### [commentPattern](index.js#L30)
 
@@ -36,38 +84,17 @@ The file-language is determined by the file-extension.
 * `filename` **{string}**: the name of the file    
 * `returns` **{object}**: the comment-patterns  
 
-### [.commentPattern.regex](index.js#L70)
+### [.commentPattern.regex](index.js#L47)
 
-Load the comment-regex for a given file. The result contains a regex that matches the comments in the specification. It also has information about which the different capturing groups of an object. For example
-
-Note that only one the groups from `cg.contentStart` to `cg.beforeCode - 1` will have a match.
-This depends on the comment-pattern that was used in the comment.
+Load the comment-regex for a given file.
+The result contains a regex that matches the comments
+in the specification. It also has information about
+which the different capturing groups of an object.
 
 **Params**
 
 * `filename` **{string}**: the name of the file    
-* `returns` **{object}**: an object containing regular expressions and capturing-group metadata  
-
-**Example**
-
-```js
-{
-    regex: /^([ \t]*)(\/\*\*?([\s\S]*?)\*\/|((?:\/\/.*[\r\n]+)+))([\r\n]*)(.*)/gm,
-    cg: {
-        indent: 1,  // match[1] is the initial indent of the for comment start
-        wholeComment: 2,  // match[2] contains the whole comment
-        contentStart: 3,  // match[3] and the following contain the contents of the comment
-                          // if the match[3] for multiline-comment, match[4] for single-line-comments
-        beforeCode: 5,  // match[5] contains the newlines between the end of match[2] and match[6]
-        code: 6  // match[6] contains the line-of-code directly following the comment.
-     },
-    middle: [  // line-start for comment-contents in match[i - cg.contentStart]
-        /^\* ?/gm,    // matches the line-start of comments captured in match[3]
-        /^\/\/ ?/gm   // matches the line-start of comments captured in match[4]
-    ],
-    name: "C"  // the name of the language (for debugging purposes)
-}
-```
+* `returns` **{object}**: an object containing regular expressions and capturing-group metadata, see usage example for details
 
 ## The database
 
@@ -76,249 +103,9 @@ The language-specification can be found in the
 for each language. The actual databases will be
 created from these files on `prepublish`.
 
-### C
+## The language database
 
-* Name-Matchers:  `.c`  `.h` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"//"`
-
-### Clojure
-
-* Name-Matchers:  `.clj`  `.cljs` 
-
-* Single-line comment: `";;"`
-
-### CoffeeScript
-
-* Name-Matchers:  `.coffee`  `Cakefile` 
-
-* Multi-line comment: `"###*"`, `/ \*|#/`, `"###"`
-
-* Multi-line comment: `"###"`, `"#"`, `"###"`
-
-* Single-line comment: `"#"`
-
-### C++
-
-* Name-Matchers:  `.cpp`  `.hpp`  `.c++`  `.h++`  `.cc`  `.hh`  `.cxx`  `.hxx` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"//"`
-
-### CSharp
-
-* Name-Matchers:  `.cs` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"//"`
-
-### CSS
-
-* Name-Matchers:  `.css` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-### Go
-
-* Name-Matchers:  `.go` 
-
-* Single-line comment: `"//"`
-
-### Handlebars
-
-* Name-Matchers:  `.handlebars`  `.hbs` 
-
-* Multi-line comment: `"<!--"`, `""`, `"-->"`
-
-* Multi-line comment: `"{{!"`, `""`, `"}}"`
-
-### Haskell
-
-* Name-Matchers:  `.hs` 
-
-* Single-line comment: `"--"`
-
-### HTML
-
-* Name-Matchers:  `.htm`  `.html` 
-
-* Multi-line comment: `"<!--"`, `""`, `"-->"`
-
-### Jade
-
-* Name-Matchers:  `.jade` 
-
-* Single-line comment: `"//"`
-
-* Single-line comment: `"//-"`
-
-### Jake
-
-* Name-Matchers:  `.jake` 
-
-* Single-line comment: `"//"`
-
-### Java
-
-* Name-Matchers:  `.java` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"//"`
-
-### JavaScript
-
-* Name-Matchers:  `.js` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"//"`
-
-### JSON
-
-* Name-Matchers:  `.json` 
-
-### JSP
-
-* Name-Matchers:  `.jsp` 
-
-* Multi-line comment: `"<!--"`, `""`, `"-->"`
-
-* Multi-line comment: `"<%--"`, `""`, `"--%>"`
-
-### LaTeX
-
-* Name-Matchers:  `.tex`  `.latex`  `.sty` 
-
-* Single-line comment: `"%"`
-
-### LESS
-
-* Name-Matchers:  `.less` 
-
-* Single-line comment: `"//"`
-
-### LiveScript
-
-* Name-Matchers:  `.ls`  `Slakefile` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"#"`
-
-### Lua
-
-* Name-Matchers:  `.lua` 
-
-* Single-line comment: `"--"`
-
-### Make
-
-* Name-Matchers:  `Makefile` 
-
-* Single-line comment: `"#"`
-
-### Markdown
-
-* Name-Matchers:  `.md`  `.markdown`  `.mkd`  `.mkdn`  `.mdown` 
-
-* File only consists of comments
-
-### Mustache
-
-* Name-Matchers:  `.mustache` 
-
-* Multi-line comment: `"{{!"`, `""`, `"}}"`
-
-### Objective-C
-
-* Name-Matchers:  `.m`  `.mm` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"//"`
-
-### Perl
-
-* Name-Matchers:  `.pl`  `.pm` 
-
-* Single-line comment: `"#"`
-
-### PHP
-
-* Name-Matchers:  `.php`  `.php3`  `.php4`  `.php5`  `.fbp` 
-
-* Single-line comment: `"//"`
-
-### Puppet
-
-* Name-Matchers:  `.pp` 
-
-* Single-line comment: `"#"`
-
-### Python
-
-* Name-Matchers:  `.py` 
-
-* Single-line comment: `"#"`
-
-### Ruby
-
-* Name-Matchers:  `.rb`  `.ru`  `.gemspec` 
-
-* Single-line comment: `"#"`
-
-### Sass
-
-* Name-Matchers:  `.sass` 
-
-* Single-line comment: `"//"`
-
-### SCSS
-
-* Name-Matchers:  `.scss` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"//"`
-
-### Shell
-
-* Name-Matchers:  `.sh` 
-
-* Single-line comment: `"#"`
-
-### SQL
-
-* Name-Matchers:  `.sql` 
-
-* Single-line comment: `"--"`
-
-### Swift
-
-* Name-Matchers:  `.swift` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"//"`
-
-### TypeScript
-
-* Name-Matchers:  `.ts` 
-
-* Multi-line comment: `/\/\*\*?/`, `"*"`, `"*/"`
-
-* Single-line comment: `"//"`
-
-### YAML
-
-* Name-Matchers:  `.yml`  `.yaml` 
-
-* Single-line comment: `"#"`
+[The language database can be found here](docs/database.md)
 
 ## Updating the language-database
 
@@ -332,7 +119,9 @@ npm i -d && npm run-script update-from-groc
 ```
 
 **Please be careful when doing this: Language-specifications may have been changed manually,
-so be careful not to override any changed files.**
+so be careful not to commit any changed files.**
+
+## Writing custom variations
 
 ## Run tests
 
@@ -350,8 +139,8 @@ npm i -d && npm test
 
 **Nils Knappmeier**
 
-+ [github/jonschlinkert](https://github.com/jonschlinkert)
-+ [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
++ [github/nknapp](https://github.com/nknapp)
++ [twitter/knappi79](http://twitter.com/knappi79)
 
 ## License
 
@@ -360,7 +149,7 @@ Released under the MIT license.
 
 ***
 
-_This file was generated by [verb-cli](https://github.com/assemble/verb-cli) on May 14, 2015._
+_This file was generated by [verb-cli](https://github.com/assemble/verb-cli) on May 20, 2015._
 
 <!-- reflinks generated by verb-reflinks plugin -->
 
