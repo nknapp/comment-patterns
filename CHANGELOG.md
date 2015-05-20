@@ -2,7 +2,7 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Upcoming
+## v0.4.0 - 2015-05-20
 ### Fix
 - Consecutive indented lines of single-line-comments are now recognized 
   as a single comment by regexes
