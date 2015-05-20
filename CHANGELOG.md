@@ -2,7 +2,7 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Upcoming
+## v0.5.0 - 2015-05-20
 ### Fix
 - Remove "function()" from generated database files. This lead to an error in the test cases.
 
