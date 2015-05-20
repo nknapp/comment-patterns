@@ -28,7 +28,7 @@ function Writer(data) {
         // Remove wrapping parens which are always created by json-literal
         var node = stringify(data).replace(/^\((.*)\)$/, "$1");
         // Create a valid javascript module
-        var string = "module.exports = function() { return " + node + "};";
+        var string = "module.exports = " + node + ";";
         // If prettyprint is enabled, use esformatter to format
         // the resulting javascript.
         if (prettyPrint) {
