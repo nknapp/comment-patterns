@@ -107,6 +107,10 @@ created from these files on `prepublish`.
 
 [The language database can be found here](docs/languages.md)
 
+## Contributing
+
+See the [contributing guide](docs/contributing.md)
+
 ## Run tests
 
 Install dev dependencies:
