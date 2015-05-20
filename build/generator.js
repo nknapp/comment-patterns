@@ -3,7 +3,10 @@ var fs = require("fs");
 var Writer = require("./writer.js");
 var _ = require("lodash");
 
-
+/**
+ * Class the can generate variations and indexes for the comment-patterns database.
+ * @constructor
+ */
 function Generator() {
 
     // Read the whole database into a single array

@@ -48,7 +48,7 @@ verb.task('readme', function () {
 });
 
 verb.task('docs', function () {
-    verb.src(['doc-templates/*.md'])
+    verb.src(['.docs/*.md'])
         .pipe(verb.dest('./docs/'));
 });
 

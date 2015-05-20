@@ -1,9 +1,9 @@
 ## The database
 
+These are the base entries (no variations) of the database:
 
 
 ### C
-
 ```js
 {
   name: "C",
@@ -18,9 +18,7 @@
 ```
 
 
-
 ### Clojure
-
 ```js
 {
   name: "Clojure",
@@ -30,9 +28,7 @@
 ```
 
 
-
 ### CoffeeScript
-
 ```js
 {
   name: "CoffeeScript",
@@ -51,9 +47,7 @@
 ```
 
 
-
 ### C++
-
 ```js
 {
   name: "C++",
@@ -68,9 +62,7 @@
 ```
 
 
-
 ### CSharp
-
 ```js
 {
   name: "CSharp",
@@ -85,9 +77,7 @@
 ```
 
 
-
 ### CSS
-
 ```js
 {
   name: "CSS",
@@ -101,9 +91,7 @@
 ```
 
 
-
 ### Go
-
 ```js
 {
   name: "Go",
@@ -113,9 +101,7 @@
 ```
 
 
-
 ### Handlebars
-
 ```js
 {
   name: "Handlebars",
@@ -133,9 +119,7 @@
 ```
 
 
-
 ### Haskell
-
 ```js
 {
   name: "Haskell",
@@ -145,9 +129,7 @@
 ```
 
 
-
 ### HTML
-
 ```js
 {
   name: "HTML",
@@ -161,9 +143,7 @@
 ```
 
 
-
 ### Jade
-
 ```js
 {
   name: "Jade",
@@ -173,9 +153,7 @@
 ```
 
 
-
 ### Jake
-
 ```js
 {
   name: "Jake",
@@ -185,9 +163,7 @@
 ```
 
 
-
 ### Java
-
 ```js
 {
   name: "Java",
@@ -202,9 +178,7 @@
 ```
 
 
-
 ### JavaScript
-
 ```js
 {
   name: "JavaScript",
@@ -219,9 +193,7 @@
 ```
 
 
-
 ### JSON
-
 ```js
 {
   name: "JSON",
@@ -230,9 +202,7 @@
 ```
 
 
-
 ### JSP
-
 ```js
 {
   name: "JSP",
@@ -250,9 +220,7 @@
 ```
 
 
-
 ### LaTeX
-
 ```js
 {
   name: "LaTeX",
@@ -262,9 +230,7 @@
 ```
 
 
-
 ### LESS
-
 ```js
 {
   name: "LESS",
@@ -274,9 +240,7 @@
 ```
 
 
-
 ### LiveScript
-
 ```js
 {
   name: "LiveScript",
@@ -291,9 +255,7 @@
 ```
 
 
-
 ### Lua
-
 ```js
 {
   name: "Lua",
@@ -303,9 +265,7 @@
 ```
 
 
-
 ### Make
-
 ```js
 {
   name: "Make",
@@ -315,9 +275,7 @@
 ```
 
 
-
 ### Markdown
-
 ```js
 {
   name: "Markdown",
@@ -327,9 +285,7 @@
 ```
 
 
-
 ### Mustache
-
 ```js
 {
   name: "Mustache",
@@ -343,9 +299,7 @@
 ```
 
 
-
 ### Objective-C
-
 ```js
 {
   name: "Objective-C",
@@ -360,9 +314,7 @@
 ```
 
 
-
 ### Perl
-
 ```js
 {
   name: "Perl",
@@ -372,9 +324,7 @@
 ```
 
 
-
 ### PHP
-
 ```js
 {
   name: "PHP",
@@ -384,9 +334,7 @@
 ```
 
 
-
 ### Puppet
-
 ```js
 {
   name: "Puppet",
@@ -396,9 +344,7 @@
 ```
 
 
-
 ### Python
-
 ```js
 {
   name: "Python",
@@ -408,9 +354,7 @@
 ```
 
 
-
 ### Ruby
-
 ```js
 {
   name: "Ruby",
@@ -420,9 +364,7 @@
 ```
 
 
-
 ### Sass
-
 ```js
 {
   name: "Sass",
@@ -432,9 +374,7 @@
 ```
 
 
-
 ### SCSS
-
 ```js
 {
   name: "SCSS",
@@ -449,9 +389,7 @@
 ```
 
 
-
 ### Shell
-
 ```js
 {
   name: "Shell",
@@ -461,9 +399,7 @@
 ```
 
 
-
 ### SQL
-
 ```js
 {
   name: "SQL",
@@ -473,9 +409,7 @@
 ```
 
 
-
 ### Swift
-
 ```js
 {
   name: "Swift",
@@ -490,9 +424,7 @@
 ```
 
 
-
 ### TypeScript
-
 ```js
 {
   name: "TypeScript",
@@ -507,9 +439,7 @@
 ```
 
 
-
 ### YAML
-
 ```js
 {
   name: "YAML",
@@ -517,6 +447,5 @@
   singleLineComment: ["#"]
 }
 ```
-
 
 

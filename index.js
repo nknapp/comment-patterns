@@ -9,7 +9,7 @@ var byMatcher = require("./db-generated/by-matcher.js");
  */
 var langIndex = function (filename) {
     // Look for whole filename and for extension ("Makefile" is not an extesion,
-    // but should be matched to the appropriate file
+    // but should be matched to the appropriate language)
     var index = byMatcher[filename];
     if (_.isUndefined(index)) {
         index = byMatcher[path.extname(filename)];
