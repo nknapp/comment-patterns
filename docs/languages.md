@@ -393,7 +393,7 @@ These are the base entries (no variations) of the database:
 ```js
 {
   name: "Shell",
-  nameMatchers: [".sh"],
+  nameMatchers: [".sh", ".bash"],
   singleLineComment: ["#"]
 }
 ```
