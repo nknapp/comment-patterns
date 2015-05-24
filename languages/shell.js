@@ -1,5 +1,5 @@
 module.exports = {
     name: "Shell",
-    nameMatchers: [".sh"],
+    nameMatchers: [".sh", ".bash"],
     singleLineComment: ["#"]
 };
