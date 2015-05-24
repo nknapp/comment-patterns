@@ -2,7 +2,7 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Upcoming
+## v0.5.1 - 2015-05-24
 ### Add
 - Add `.bash` as file-extension for shell-scripts.
 
