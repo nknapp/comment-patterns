@@ -2,7 +2,7 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Upcoming
+## v0.5.2 - 2015-05-27
 ### Add
 - Multi-line-comments for Less
 
