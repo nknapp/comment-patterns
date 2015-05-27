@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Upcoming
+### Add
+- Multi-line-comments for Less
+
 ## v0.5.1 - 2015-05-24
 ### Add
 - Add `.bash` as file-extension for shell-scripts.
