@@ -24,7 +24,8 @@
     "json-literal": "^1.1.0",
     "mocha": "^2.2.4",
     "should": "^6.0.1",
-    "verb": "^0.7.4"
+    "verb": "^0.7.4",
+    "verb-cli": "^0.6.2"
   },
   "dependencies": {
     "lodash": "^3.8.0"
