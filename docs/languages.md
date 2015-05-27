@@ -235,7 +235,12 @@ These are the base entries (no variations) of the database:
 {
   name: "LESS",
   nameMatchers: [".less"],
-  singleLineComment: ["//"]
+  singleLineComment: ["//"],
+  multiLineComment: [{
+    start: /\/\*\*?/,
+    middle: "*",
+    end: "*/"
+  }]
 }
 ```
 
