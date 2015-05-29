@@ -6,6 +6,7 @@ These are the base entries (no variations) of the database:
 ### C
 ```js
 {
+  srcFile: "c.js",
   name: "C",
   nameMatchers: [".c", ".h"],
   multiLineComment: [{
@@ -21,6 +22,7 @@ These are the base entries (no variations) of the database:
 ### Clojure
 ```js
 {
+  srcFile: "clojure.js",
   name: "Clojure",
   nameMatchers: [".clj", ".cljs"],
   singleLineComment: [";;"]
@@ -31,6 +33,7 @@ These are the base entries (no variations) of the database:
 ### CoffeeScript
 ```js
 {
+  srcFile: "coffeescript.js",
   name: "CoffeeScript",
   nameMatchers: [".coffee", "Cakefile"],
   multiLineComment: [{
@@ -50,6 +53,7 @@ These are the base entries (no variations) of the database:
 ### C++
 ```js
 {
+  srcFile: "cplusplus.js",
   name: "C++",
   nameMatchers: [".cpp", ".hpp", ".c++", ".h++", ".cc", ".hh", ".cxx", ".hxx"],
   multiLineComment: [{
@@ -65,6 +69,7 @@ These are the base entries (no variations) of the database:
 ### CSharp
 ```js
 {
+  srcFile: "csharp.js",
   name: "CSharp",
   nameMatchers: [".cs"],
   multiLineComment: [{
@@ -80,6 +85,7 @@ These are the base entries (no variations) of the database:
 ### CSS
 ```js
 {
+  srcFile: "css.js",
   name: "CSS",
   nameMatchers: [".css"],
   multiLineComment: [{
@@ -94,6 +100,7 @@ These are the base entries (no variations) of the database:
 ### Go
 ```js
 {
+  srcFile: "go.js",
   name: "Go",
   nameMatchers: [".go"],
   singleLineComment: ["//"]
@@ -104,6 +111,7 @@ These are the base entries (no variations) of the database:
 ### Handlebars
 ```js
 {
+  srcFile: "handlebars.js",
   name: "Handlebars",
   nameMatchers: [".handlebars", ".hbs"],
   multiLineComment: [{
@@ -122,6 +130,7 @@ These are the base entries (no variations) of the database:
 ### Haskell
 ```js
 {
+  srcFile: "haskell.js",
   name: "Haskell",
   nameMatchers: [".hs"],
   singleLineComment: ["--"]
@@ -132,6 +141,7 @@ These are the base entries (no variations) of the database:
 ### HTML
 ```js
 {
+  srcFile: "html.js",
   name: "HTML",
   nameMatchers: [".htm", ".html"],
   multiLineComment: [{
@@ -146,6 +156,7 @@ These are the base entries (no variations) of the database:
 ### Jade
 ```js
 {
+  srcFile: "jade.js",
   name: "Jade",
   nameMatchers: [".jade"],
   singleLineComment: ["//", "//-"]
@@ -156,6 +167,7 @@ These are the base entries (no variations) of the database:
 ### Jake
 ```js
 {
+  srcFile: "jake.js",
   name: "Jake",
   nameMatchers: [".jake"],
   singleLineComment: ["//"]
@@ -166,6 +178,7 @@ These are the base entries (no variations) of the database:
 ### Java
 ```js
 {
+  srcFile: "java.js",
   name: "Java",
   nameMatchers: [".java"],
   multiLineComment: [{
@@ -181,6 +194,7 @@ These are the base entries (no variations) of the database:
 ### JavaScript
 ```js
 {
+  srcFile: "javascript.js",
   name: "JavaScript",
   nameMatchers: [".js"],
   multiLineComment: [{
@@ -196,6 +210,7 @@ These are the base entries (no variations) of the database:
 ### JSON
 ```js
 {
+  srcFile: "json.js",
   name: "JSON",
   nameMatchers: [".json"]
 }
@@ -205,6 +220,7 @@ These are the base entries (no variations) of the database:
 ### JSP
 ```js
 {
+  srcFile: "jsp.js",
   name: "JSP",
   nameMatchers: [".jsp"],
   multiLineComment: [{
@@ -223,6 +239,7 @@ These are the base entries (no variations) of the database:
 ### LaTeX
 ```js
 {
+  srcFile: "latex.js",
   name: "LaTeX",
   nameMatchers: [".tex", ".latex", ".sty"],
   singleLineComment: ["%"]
@@ -233,6 +250,7 @@ These are the base entries (no variations) of the database:
 ### LESS
 ```js
 {
+  srcFile: "less.js",
   name: "LESS",
   nameMatchers: [".less"],
   singleLineComment: ["//"],
@@ -248,6 +266,7 @@ These are the base entries (no variations) of the database:
 ### LiveScript
 ```js
 {
+  srcFile: "livescript.js",
   name: "LiveScript",
   nameMatchers: [".ls", "Slakefile"],
   multiLineComment: [{
@@ -263,6 +282,7 @@ These are the base entries (no variations) of the database:
 ### Lua
 ```js
 {
+  srcFile: "lua.js",
   name: "Lua",
   nameMatchers: [".lua"],
   singleLineComment: ["--"]
@@ -273,6 +293,7 @@ These are the base entries (no variations) of the database:
 ### Make
 ```js
 {
+  srcFile: "make.js",
   name: "Make",
   nameMatchers: ["Makefile"],
   singleLineComment: ["#"]
@@ -283,6 +304,7 @@ These are the base entries (no variations) of the database:
 ### Markdown
 ```js
 {
+  srcFile: "markdown.js",
   name: "Markdown",
   nameMatchers: [".md", ".markdown", ".mkd", ".mkdn", ".mdown"],
   commentsOnly: true
@@ -293,6 +315,7 @@ These are the base entries (no variations) of the database:
 ### Mustache
 ```js
 {
+  srcFile: "mustache.js",
   name: "Mustache",
   nameMatchers: [".mustache"],
   multiLineComment: [{
@@ -307,6 +330,7 @@ These are the base entries (no variations) of the database:
 ### Objective-C
 ```js
 {
+  srcFile: "objective-c.js",
   name: "Objective-C",
   nameMatchers: [".m", ".mm"],
   multiLineComment: [{
@@ -322,6 +346,7 @@ These are the base entries (no variations) of the database:
 ### Perl
 ```js
 {
+  srcFile: "perl.js",
   name: "Perl",
   nameMatchers: [".pl", ".pm"],
   singleLineComment: ["#"]
@@ -332,6 +357,7 @@ These are the base entries (no variations) of the database:
 ### PHP
 ```js
 {
+  srcFile: "php.js",
   name: "PHP",
   nameMatchers: [".php", ".php3", ".php4", ".php5", ".fbp"],
   singleLineComment: ["//"]
@@ -342,6 +368,7 @@ These are the base entries (no variations) of the database:
 ### Puppet
 ```js
 {
+  srcFile: "puppet.js",
   name: "Puppet",
   nameMatchers: [".pp"],
   singleLineComment: ["#"]
@@ -352,6 +379,7 @@ These are the base entries (no variations) of the database:
 ### Python
 ```js
 {
+  srcFile: "python.js",
   name: "Python",
   nameMatchers: [".py"],
   singleLineComment: ["#"]
@@ -362,6 +390,7 @@ These are the base entries (no variations) of the database:
 ### Ruby
 ```js
 {
+  srcFile: "ruby.js",
   name: "Ruby",
   nameMatchers: [".rb", ".ru", ".gemspec"],
   singleLineComment: ["#"]
@@ -372,6 +401,7 @@ These are the base entries (no variations) of the database:
 ### Sass
 ```js
 {
+  srcFile: "sass.js",
   name: "Sass",
   nameMatchers: [".sass"],
   singleLineComment: ["//"]
@@ -382,6 +412,7 @@ These are the base entries (no variations) of the database:
 ### SCSS
 ```js
 {
+  srcFile: "scss.js",
   name: "SCSS",
   nameMatchers: [".scss"],
   multiLineComment: [{
@@ -397,6 +428,7 @@ These are the base entries (no variations) of the database:
 ### Shell
 ```js
 {
+  srcFile: "shell.js",
   name: "Shell",
   nameMatchers: [".sh", ".bash"],
   singleLineComment: ["#"]
@@ -407,6 +439,7 @@ These are the base entries (no variations) of the database:
 ### SQL
 ```js
 {
+  srcFile: "sql.js",
   name: "SQL",
   nameMatchers: [".sql"],
   singleLineComment: ["--"]
@@ -417,6 +450,7 @@ These are the base entries (no variations) of the database:
 ### Swift
 ```js
 {
+  srcFile: "swift.js",
   name: "Swift",
   nameMatchers: [".swift"],
   multiLineComment: [{
@@ -432,6 +466,7 @@ These are the base entries (no variations) of the database:
 ### TypeScript
 ```js
 {
+  srcFile: "typescript.js",
   name: "TypeScript",
   nameMatchers: [".ts"],
   multiLineComment: [{
@@ -447,6 +482,7 @@ These are the base entries (no variations) of the database:
 ### YAML
 ```js
 {
+  srcFile: "yaml.js",
   name: "YAML",
   nameMatchers: [".yml", ".yaml"],
   singleLineComment: ["#"]

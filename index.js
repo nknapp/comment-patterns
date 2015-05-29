@@ -8,16 +8,16 @@ var byMatcher = require("./db-generated/by-matcher.js");
  * @returns {*}
  */
 var langIndex = function (filename) {
-    // Look for whole filename and for extension ("Makefile" is not an extesion,
-    // but should be matched to the appropriate language)
-    var index = byMatcher[filename];
-    if (_.isUndefined(index)) {
-        index = byMatcher[path.extname(filename)];
-    }
-    if (_.isUndefined(index)) {
-        throw new Error("Cannot find language definition for '" + filename + "'");
-    }
-    return index;
+  // Look for whole filename and for extension ("Makefile" is not an extesion,
+  // but should be matched to the appropriate language)
+  var index = byMatcher[filename];
+  if (_.isUndefined(index)) {
+    index = byMatcher[path.extname(filename)];
+  }
+  if (_.isUndefined(index)) {
+    throw new Error("Cannot find language definition for '" + filename + "'");
+  }
+  return index;
 };
 /**
  * Load the comment-pattern for a given file.
@@ -27,8 +27,10 @@ var langIndex = function (filename) {
  * @api public
  */
 function commentPattern(filename) {
-    var base = require("./db-generated/base.js");
-    return _.cloneDeep(base[langIndex(filename)]);
+  var base = require("./db-generated/base.js");
+  var clone = _.cloneDeep(base[langIndex(filename)]);
+  delete clone.srcFile;
+  return clone;
 }
 
 /**
@@ -44,9 +46,31 @@ function commentPattern(filename) {
  * @name commentPattern.regex
  */
 commentPattern.regex = function commentRegex(filename) {
-    var regex = require("./db-generated/regexes.js");
-    return _.cloneDeep(regex[langIndex(filename)]);
+  var regex = require("./db-generated/regexes.js");
+  return _.cloneDeep(regex[langIndex(filename)]);
 };
 
+/**
+ * Returns the code-context detector for a given filename
+ * (based on the name or the file-extension
+ * @param {string} filename the name of the file that will be evaluated.
+ * @return {function(string,number)} a function that detects the code-context
+ *   based on a line of code (and a line-number)
+ */
+commentPattern.codeContext = function codeContext(filename) {
+  var base = require("./db-generated/base.js");
+  var langFile = base[langIndex(filename)].srcFile;
+  try {
+    var path = "./languages/" + langFile.replace(/.js$/, '.code-context.js');
+    console.log(path);
+    return require(path);
+  } catch (e) {
+    if (e.code === 'MODULE_NOT_FOUND') {
+      throw new Error("No code-context defined in file ' " + langFile);
+    } else {
+      throw e;
+    }
+  }
+}
 
 module.exports = commentPattern;
