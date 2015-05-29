@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nknapp/language-comments.git"
+    "url": "https://github.com/nknapp/comment-patterns.git"
   },
   "author": "Nils Knappmeier",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nknapp/language-comments/issues"
+    "url": "https://github.com/nknapp/comment-patterns/issues"
   },
-  "homepage": "https://github.com/nknapp/language-comments",
+  "homepage": "https://github.com/nknapp/comment-patterns",
   "devDependencies": {
     "esformatter": "^0.6.1",
     "groc": "^0.8.0",
@@ -28,6 +28,7 @@
     "verb-cli": "^0.6.2"
   },
   "dependencies": {
-    "lodash": "^3.8.0"
+    "lodash": "^3.8.0",
+    "parse-code-context": "^0.1.3"
   }
 }
