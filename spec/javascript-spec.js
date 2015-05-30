@@ -1,4 +1,4 @@
-var patterns = require("./");
+var patterns = require("../");
 var should = require('should');
 
 describe("comment-patterns", function () {
@@ -85,9 +85,7 @@ describe("comment-patterns.regex", function () {
 describe("comment-patterns.codeContext", function () {
   it("should regognize a function in a js-string", function () {
     var codeContext = patterns.codeContext("test.js");
-    console.log("codeContext", codeContext);
     var result = codeContext.detect("function name(param1, param2)", 2);
-    console.log(result);
     result.should.eql({
       begin: 2,
       name: 'name',
