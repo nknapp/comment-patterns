@@ -8,7 +8,7 @@ var path = require("path");
 var Writer = require("./writer");
 
 
-var databaseDir = path.resolve(__dirname, "..", "languages");
+var databaseDir = path.resolve(__dirname, "..", "languages","patterns");
 /**
  * At first, we create a simple array of specs (from the `groc`-languages file).
  * The array can be transformed later to improved performance.
