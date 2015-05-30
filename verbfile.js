@@ -9,14 +9,14 @@ var esformatter = require('esformatter');
  * @returns {string} a pretty printed markdown code-block
  */
 function stringify(obj) {
-    var formatted = esformatter.format(literal.stringify(obj), {
-        indent: {
-            value: '  '
-        }
-    });
-    return "```js\n"
-        + formatted.replace(/^\(([\s\S]*)\)$/, "$1")
-        + "\n```\n";
+  var formatted = esformatter.format(literal.stringify(obj), {
+    indent: {
+      value: '  '
+    }
+  });
+  return "```js\n"
+    + formatted.replace(/^\(([\s\S]*)\)$/, "$1")
+    + "\n```\n";
 }
 
 // load data for templates if needed
@@ -26,14 +26,22 @@ verb.data({"langDB": require("./db-generated/base.js")});
  * Helper to call the base function of this module
  */
 verb.helper('commentPatterns', function (filename) {
-    return stringify(commentPatterns(filename));
+  return stringify(commentPatterns(filename));
+});
+
+/**
+ * Helper to call the codeContext function of this module
+ */
+verb.helper('codeContext', function (filename, string, lineNr) {
+  var codeContext = commentPatterns.codeContext(filename).detect(string, lineNr);
+  return stringify(codeContext);
 });
 
 /**
  * Helper to call the .regex-function of this module
  */
 verb.helper('commentPatterns_regex', function (filename) {
-    return stringify(commentPatterns.regex(filename));
+  return stringify(commentPatterns.regex(filename));
 });
 
 /**
@@ -42,14 +50,14 @@ verb.helper('commentPatterns_regex', function (filename) {
 verb.helper('literal', stringify);
 
 verb.task('readme', function () {
-    verb.src(['.verb.md'])
-        .pipe(verb.dest('./'));
+  verb.src(['.verb.md'])
+    .pipe(verb.dest('./'));
 
 });
 
 verb.task('docs', function () {
-    verb.src(['.docs/*.md'])
-        .pipe(verb.dest('./docs/'));
+  verb.src(['.docs/*.md'])
+    .pipe(verb.dest('./docs/'));
 });
 
-verb.task('default',['readme','docs']);
+verb.task('default', ['readme', 'docs']);

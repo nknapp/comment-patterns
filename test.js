@@ -98,11 +98,11 @@ describe("comment-patterns.codeContext", function () {
     });
   })
 
-  it("should throw a descriptive error, if no code-context parser is defined for the language", function () {
+  it("should throw an error, if no code-context parser is defined for the language", function () {
     try {
       patterns.codeContext("test.scss"); // non existing languauge
     } catch (e) {
-      e.message.should.equal("No code-context defined in file ' scss.js");
+      e.message.should.equal("Cannot find module './languages/code-context/scss.js'");
     }
   });
 });

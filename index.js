@@ -60,17 +60,7 @@ commentPattern.regex = function commentRegex(filename) {
 commentPattern.codeContext = function codeContext(filename) {
   var base = require("./db-generated/base.js");
   var langFile = base[langIndex(filename)].srcFile;
-  try {
-    var path = "./languages/" + langFile.replace(/.js$/, '.code-context.js');
-    console.log(path);
-    return require(path);
-  } catch (e) {
-    if (e.code === 'MODULE_NOT_FOUND') {
-      throw new Error("No code-context defined in file ' " + langFile);
-    } else {
-      throw e;
-    }
-  }
+  return require("./languages/code-context/" + langFile);
 }
 
 module.exports = commentPattern;

@@ -10,7 +10,7 @@ var _ = require("lodash");
 function Generator() {
 
   // Read the whole database into a single array
-  var languagesPath = path.resolve(__dirname, "..", "languages");
+  var languagesPath = path.resolve(__dirname, "..", "languages","patterns");
   var langFiles = fs.readdirSync(languagesPath);
 
   /**
