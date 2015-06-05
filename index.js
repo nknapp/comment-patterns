@@ -3,7 +3,7 @@ var _ = require("lodash");
 var byMatcher = require("./db-generated/by-matcher.js");
 
 /**
- * Determind the index of a language specifiation in the languages-array.
+ * Determine the index of a language specifiation in the languages-array.
  * @param filename
  * @returns {*}
  */
