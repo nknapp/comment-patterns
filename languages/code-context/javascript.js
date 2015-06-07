@@ -7,8 +7,9 @@ var Detector = require("../../lib/detector.js");
  * @api public
  */
 module.exports = new Detector([
+  // Use Jon Schlinkert's module to detect the code context
   require("parse-code-context"),
-  // Properties of an object  (like "name: function(param1,paramw
+  // Function-properties of an object (like "name: function(param1,param)")
   Detector.parser(/[ \t]*["']?([\w$]+)["']?[ \t]*:[ \t]*function([\w\W]+)?/, function (match) {
     return {
       begin: i,
