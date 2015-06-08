@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Upcoming
+### Add
+- Add function `.codeContext` to return code-context parser for different languages.
+
 ## v0.5.2 - 2015-05-27
 ### Add
 - Multi-line-comments for Less
