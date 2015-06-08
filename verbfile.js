@@ -51,13 +51,18 @@ verb.helper('literal', stringify);
 
 verb.task('readme', function () {
   verb.src(['.verb.md'])
-    .pipe(verb.dest('./'));
-
+    .pipe(verb.dest('./'))
+    .on("error", function (error) {
+      console.error(error.stack);
+    });
 });
 
 verb.task('docs', function () {
   verb.src(['.docs/*.md'])
-    .pipe(verb.dest('./docs/'));
+    .pipe(verb.dest('./docs/'))
+    .on("error", function (error) {
+      console.error(error.stack);
+    });
 });
 
 verb.task('default', ['readme', 'docs']);

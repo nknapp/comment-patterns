@@ -55,14 +55,14 @@ should be put in a separate file in the `variations` directory.
 
 The language-specifications where initially pulled from the  
 [language-database of `groc`](http://nevir.github.io/groc/languages.html).
-It may still be good to pull an update
-from `groc`, which can be done by the following command:
+
+Pulling updates from `groc` into the files in `languages/patterns` is not such
+a good idea anymore: Almost all files have been changed manually, so there would be 
+a lot of conflicts to resolve. However, it is still possible, since the scripts are 
+still there:
 
 ```bash                                        
 npm i -d && npm run-script update-from-groc
 ```
 
-**Please be careful when doing this: Language-specifications may have been changed manually,
-so be careful not to commit any changed files.**
-
-
+**Be careful not to submit any regressions after updating the database.**

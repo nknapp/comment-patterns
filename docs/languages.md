@@ -119,9 +119,7 @@ These are the base entries (no variations) of the database:
     middle: "",
     end: "-->"
   }, {
-    start: "{{!",
-    middle: "",
-    end: "}}"
+    start: ""
   }]
 }
 ```
@@ -319,9 +317,7 @@ These are the base entries (no variations) of the database:
   name: "Mustache",
   nameMatchers: [".mustache"],
   multiLineComment: [{
-    start: "{{!",
-    middle: "",
-    end: "}}"
+    start: ""
   }]
 }
 ```
