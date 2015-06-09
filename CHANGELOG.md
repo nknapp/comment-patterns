@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Upcoming
+## Fix
+- Fix code-context detection for object properties that are functions.
+  (i.e. "key: function(a,b) {")
+
 ## v0.6.0 - 2015-06-08
 ### Add
 - Add function `.codeContext` to return code-context parser for different languages.

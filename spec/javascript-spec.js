@@ -103,5 +103,18 @@ describe("comment-patterns.codeContext", function () {
       e.message.should.equal("Cannot find module './languages/code-context/scss.js'");
     }
   });
+
+  it("should work correctly for functions in object properties", function () {
+    var detector = patterns.codeContext("test.js");
+    expect(detector.detect("key: function(a,b) {", 2)).toEqual({
+      begin: 2,
+      type: 'function expression',
+      name: 'key',
+      params: ['a','b'],
+      string: 'key()',
+      original: "key: function(a,b) {"
+    });
+  });
+
 });
 

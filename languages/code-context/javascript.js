@@ -10,14 +10,13 @@ module.exports = new Detector([
   // Use Jon Schlinkert's module to detect the code context
   require("parse-code-context"),
   // Function-properties of an object (like "name: function(param1,param)")
-  Detector.parser(/[ \t]*["']?([\w$]+)["']?[ \t]*:[ \t]*function([\w\W]+)?/, function (match) {
+  Detector.parser(/[ \t]*["']?([\w$]+)["']?[ \t]*:[ \t]*function([\w\W]+)?/, function (match,name,args) {
     return {
-      begin: i,
       type: 'function expression',
-      name: match[1],
-      params: (match[2]).split(/\W/g).filter(Boolean),
-      string: match[1] + '()',
-      original: str
+      name: name,
+      params: args.split(/\W/g).filter(Boolean),
+      string: name + '()',
+      original: match
     }
   })
 ]);
