@@ -87,6 +87,8 @@ filled. the others are undefined.
 * **middle** contains one pattern for each group after `  cg.contentStart` that matches
 the prefix used before comment lines. It can be used to remove this prefix.
 If the middle-prefix for this capturing group is empty (`''`), the pattern is `null`.
+* **info** contains additional information for each group after `  cg.contentStart`, currently
+this information is only `{ apidocs: true }` if the group is matching an apidoc comment.
 * **name** is the language name for debugging purposes.
 
 ## Variation (codeContext)
