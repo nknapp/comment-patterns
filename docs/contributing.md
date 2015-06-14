@@ -1,8 +1,11 @@
 # Contributing
 
 You can contribute by supplying new patterns for languages and by fixing errors 
-in existing language definitions. Small changes can be done in a pull-request without
-an issue.
+in existing language definitions. This is especially true for the `apidoc: true`
+property, which marks a comment patterns to be used as apidoc-comment for the given
+language (see [the c-style.js](languages/patterns/common/c-style.js)) 
+
+Small changes can be done in a pull-request without an issue.
 
 If you think there is useful information that should be provided in the database,
 please create an issue before makeing a pull request. Since the database is 
@@ -12,6 +15,7 @@ adding new features (fields) and keeping the file-size small.
 Variations such as the `.regex()`-function are derived from core database and precompiled
 into a single file. If you think there should be another variation, please create an issue
 before submitting a pull-request.
+
 
 # Creating variations and indexes 
 
