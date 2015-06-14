@@ -3,7 +3,7 @@
 You can contribute by supplying new patterns for languages and by fixing errors 
 in existing language definitions. This is especially true for the `apidoc: true`
 property, which marks a comment patterns to be used as apidoc-comment for the given
-language (see [the c-style.js](languages/patterns/common/c-style.js)) 
+language (see [the c-style.js](../languages/patterns/common/c-style.js)) 
 
 Small changes can be done in a pull-request without an issue.
 
