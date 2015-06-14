@@ -1,9 +1,9 @@
 module.exports = {
-    name: "Mustache",
-    nameMatchers: [".mustache"],
-    multiLineComment: [{
-        start: "{{!",
-        middle: "",
-        end: "}}"
-    }]
-};
+  name: 'Mustache',
+  nameMatchers: ['.mustache'],
+  multiLineComment: [{
+    start: '{{!',
+    middle: '',
+    end: '}}'
+  }]
+}

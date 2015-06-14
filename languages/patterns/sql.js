@@ -1,5 +1,5 @@
 module.exports = {
-    name: "SQL",
-    nameMatchers: [".sql"],
-    singleLineComment: ["--"]
-};
+  name: 'SQL',
+  nameMatchers: ['.sql'],
+  singleLineComment: ['--']
+}

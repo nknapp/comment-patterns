@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Lua",
-    nameMatchers: [".lua"],
-    singleLineComment: ["--"]
-};
+  name: 'Lua',
+  nameMatchers: ['.lua'],
+  singleLineComment: ['--']
+}

@@ -19,11 +19,18 @@ This will lead to `p` being:
   name: "JavaScript",
   nameMatchers: [".js"],
   multiLineComment: [{
-    start: /\/\*\*?/,
+    start: /\/\*\*/,
+    middle: "*",
+    end: "*/",
+    apidoc: true
+  }, {
+    start: /\/\*/,
     middle: "*",
     end: "*/"
   }],
-  singleLineComment: ["//"]
+  singleLineComment: [{
+    start: "//"
+  }]
 }
 ```
 
@@ -49,14 +56,22 @@ The result `re` will be:
 
 ```js
 {
-  regex: /^([ \t]*)(\/\*\*?([\s\S]*?)\*\/|((?:[ \t]*?\/\/.*\r?\n?)+))[\r\n]*/gm,
+  regex: /^([ \t]*)(\/\*\*([\s\S]*?)\*\/|\/\*([\s\S]*?)\*\/|((?:[ \t]*?\/\/.*\r?\n?)+))[\r\n]*/gm,
   cg: {
     indent: 1,
     wholeComment: 2,
     contentStart: 3
   },
-  middle: [/^[ \t]*\*/gm, /^[ \t]*\/\//gm],
-  name: "JavaScript"
+  middle: [/^[ \t]*\*/gm, /^[ \t]*\*/gm, /^[ \t]*\/\//gm],
+  name: "JavaScript",
+  info: [{
+    type: "multiline",
+    apidoc: true
+  }, {
+    type: "multiline"
+  }, {
+    type: "singleline"
+  }]
 }
 ```
 

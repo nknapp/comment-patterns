@@ -35,7 +35,8 @@
   },
   "standard": {
     "ignore": [
-      "spec/fixtures/**"
+      "spec/fixtures/**",
+      "db-generated/**"
     ]
   },
   "keywords": []

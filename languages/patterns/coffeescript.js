@@ -1,14 +1,14 @@
 module.exports = {
-  name: "CoffeeScript",
-  nameMatchers: [".coffee", "Cakefile"],
+  name: 'CoffeeScript',
+  nameMatchers: ['.coffee', 'Cakefile'],
   multiLineComment: [{
-    start: "###*",
+    start: '###*',
     middle: / \*|#/,
-    end: "###"
+    end: '###'
   }, {
-    start: "###",
-    middle: "#",
-    end: "###"
+    start: '###',
+    middle: '#',
+    end: '###'
   }],
-  singleLineComment: ["#"]
-};
+  singleLineComment: ['#']
+}

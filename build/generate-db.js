@@ -1,28 +1,23 @@
-var path = require("path");
-var fs = require("fs");
-var _ = require("lodash");
-var Generator = require("./generator.js");
+var path = require('path')
+var fs = require('fs')
+var _ = require('lodash')
+var Generator = require('./generator.js')
 
 // Generate base directory
-var databaseDir = path.resolve(__dirname, "..", "db-generated");
+var databaseDir = path.resolve(__dirname, '..', 'db-generated')
 if (!fs.existsSync(databaseDir)) {
-    fs.mkdir(databaseDir);
+  fs.mkdir(databaseDir)
 }
 
-var generator = new Generator();
+var generator = new Generator()
 
 // Generate indexes
-generator.createIndex(_.property("name")).writeTo(databaseDir, "by-name.js");
-generator.createIndex(_.property("nameMatchers")).writeTo(databaseDir, "by-matcher.js");
+generator.createIndex(_.property('name')).writeTo(databaseDir, 'by-name.js')
+generator.createIndex(_.property('nameMatchers')).writeTo(databaseDir, 'by-matcher.js')
 
 // Generate (transformed) databases
-generator.writeTo(databaseDir, "base.js");
+generator.writeTo(databaseDir, 'base.js')
 
 // For regexes...
-var regexTransform = require("./variations/regexes.js");
-generator.transform(regexTransform).writeTo(databaseDir, "regexes.js");
-
-
-
-
-
+var regexTransform = require('./variations/regexes.js')
+generator.transform(regexTransform).writeTo(databaseDir, 'regexes.js')

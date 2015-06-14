@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Jade",
-    nameMatchers: [".jade"],
-    singleLineComment: ["//", "//-"]
-};
+  name: 'Jade',
+  nameMatchers: ['.jade'],
+  singleLineComment: ['//', '//-']
+}

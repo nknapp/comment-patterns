@@ -3,9 +3,22 @@
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Upcoming
-## Fix
+### Fix
 - Fix code-context detection for object properties that are functions.
   (i.e. "key: function(a,b) {")
+
+### Add
+- C-style multiline-comments splitted into multiple regexes (`/**`, and `/*`). 
+  `/**` is marked as "used for apidocs"
+- Add `info` property to the output of `.regex`, which contains additional information
+  (so far only the `apidoc: true` property.
+  
+### Breaking changes
+
+- `.singleLineComment` is no longer and array of strings (`['#']` but an array
+  of objects (`[ { start: '#' } ]`) in order to allow them to be marked
+  as "used for apidocs". Definitions can be mixed in the languages-source-files,
+  but will always appear in the second form in the compiled database.
 
 ## v0.6.0 - 2015-06-08
 ### Add

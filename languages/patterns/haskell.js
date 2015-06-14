@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Haskell",
-    nameMatchers: [".hs"],
-    singleLineComment: ["--"]
-};
+  name: 'Haskell',
+  nameMatchers: ['.hs'],
+  singleLineComment: ['--']
+}

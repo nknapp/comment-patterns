@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Python",
-    nameMatchers: [".py"],
-    singleLineComment: ["#"]
-};
+  name: 'Python',
+  nameMatchers: ['.py'],
+  singleLineComment: ['#']
+}
