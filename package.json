@@ -4,9 +4,11 @@
   "description": "A list of comment-patterns for different languages",
   "main": "index.js",
   "scripts": {
+    "pretest": "npm list --depth=0 -g standard || npm -g install standard",
     "test": "node build/generate-db.js && jasmine && standard",
-    "prepublish": "verb && node build/generate-db.js",
+    "prepublish": "node build/generate-db.js",
     "update-from-groc": "node build/update-from-groc.js",
+    "preformat": "npm list --depth=0 -g standard || npm -g install standard",
     "format": "standard --format"
   },
   "repository": {
@@ -25,7 +27,6 @@
     "jasmine": "^2.3.1",
     "json-literal": "^1.1.0",
     "should": "^6.0.1",
-    "standard": "^3.11.0",
     "verb": "git://github.com/verbose/verb",
     "verb-cli": "git://github.com/verbose/verb-cli"
   },
