@@ -14,6 +14,7 @@ module.exports = new Detector([
     return {
       type: 'function expression',
       name: name,
+      // Split params by non-word characters and take only the defined ones.
       params: args.split(/\W/g).filter(Boolean),
       string: name + '()',
       original: match

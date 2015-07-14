@@ -148,4 +148,17 @@ describe('comment-patterns.codeContext', function () {
     })
   })
 
+  it('should work correctly for functions in object properties', function () {
+    var detector = patterns.codeContext('test.js')
+    expect(detector.detect('this.key = function (a,b) {', 2)).toEqual({
+      begin: 2,
+      type: 'method',
+      receiver: 'this',
+      name: 'key',
+      params: ['a', 'b'],
+      string: 'this.key()',
+      original: 'this.key = function (a,b) {'
+    })
+  })
+
 })
