@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Upcoming
+### Add
+
+- Code-Context-Functions for Handlebars
+
 ## v0.7.0 - 2015-06-14
 ### Fix
 - Fix code-context detection for object properties that are functions.
