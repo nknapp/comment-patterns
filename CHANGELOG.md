@@ -2,7 +2,7 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Upcoming
+## v0.8.0 - 2015-07-20
 ### Add
 
 - Code-Context-Functions for Handlebars
