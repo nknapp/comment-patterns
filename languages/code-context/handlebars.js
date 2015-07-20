@@ -7,9 +7,9 @@ var Detector = require('../../lib/detector.js')
  * @api public
  */
 module.exports = new Detector([
-  Detector.parser(/.*/, function() {
+  Detector.parser(/.*/, function () {
     return {
       type: 'function expression'
-    };
+    }
   })
-]);
+])
