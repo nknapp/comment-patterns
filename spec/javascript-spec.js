@@ -59,7 +59,6 @@ describe('comment-patterns', function () {
       }
     )
   })
-
 })
 
 describe('comment-patterns.regex', function () {
@@ -160,5 +159,4 @@ describe('comment-patterns.codeContext', function () {
       original: 'this.key = function (a,b) {'
     })
   })
-
 })

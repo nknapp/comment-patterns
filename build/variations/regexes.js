@@ -55,7 +55,6 @@ module.exports = function (pattern) {
       },
       _.omit(slc, 'start')
     ))
-
   })
 
   var regex = new RegExp(
@@ -85,7 +84,6 @@ module.exports = function (pattern) {
     name: pattern.name,
     info: info
   }
-
 }
 
 // Escape a regex or a string for use as part of another regex.
