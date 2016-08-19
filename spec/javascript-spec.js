@@ -110,6 +110,21 @@ describe('comment-patterns.regex', function () {
     should.not.exist(match[r.cg.contentStart + 1])
     match[r.cg.contentStart + 2].should.eql('// line 1\n // line 2\n')
   })
+
+  it('should provide a regex that matches multi-line ruby comments', function () {
+    var r = patterns.regex('test.rb')
+    var match = r.regex.exec('\n=begin\nline 1\n=end\n')
+    match[r.cg.contentStart].should.eql('\nline 1\n')
+  })
+
+  it('should provide a regex that matches multi-line python comments', function () {
+    var r = patterns.regex('test.py')
+    var match = r.regex.exec('"""\nline 1\n"""')
+    match[r.cg.contentStart].should.eql('\nline 1\n')
+
+    match = r.regex.exec('variable="""\n multiline string\n"""')
+    should.not.exist(match)
+  })
 })
 
 describe('comment-patterns.codeContext', function () {
