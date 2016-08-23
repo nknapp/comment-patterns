@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## v0.9.0 - 2016-08-22
+### Add
+
+- Multiline comment support for Ruby and Python
 
 ## v0.8.1 - 2015-11-08
 
@@ -21,11 +25,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
   (i.e. "key: function(a,b) {")
 
 ### Add
-- C-style multiline-comments splitted into multiple regexes (`/**`, and `/*`). 
+- C-style multiline-comments splitted into multiple regexes (`/**`, and `/*`).
   `/**` is marked as "used for apidocs"
 - Add `info` property to the output of `.regex`, which contains additional information
   (so far only the `apidoc: true` property.
-  
+
 ### Breaking changes
 
 - `.singleLineComment` is no longer and array of strings (`['#']` but an array
@@ -51,7 +55,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## v0.4.0 - 2015-05-20
 ### Fix
-- Consecutive indented lines of single-line-comments are now recognized 
+- Consecutive indented lines of single-line-comments are now recognized
   as a single comment by regexes
 -
 
@@ -75,5 +79,5 @@ This project adheres to [Semantic Versioning](http://semver.org/).
   `/php\d?/` is replaced by `php`,`php3`,...
 
 
-## v0.0.x 
+## v0.0.x
 ### Initial version
