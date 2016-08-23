@@ -1,5 +1,10 @@
 module.exports = {
   name: 'Python',
   nameMatchers: ['.py'],
-  singleLineComment: ['#']
+  singleLineComment: ['#'],
+  multiLineComment: [{
+    start: '"""',
+    middle: '',
+    end: '"""'
+  }]
 }

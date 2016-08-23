@@ -1,5 +1,10 @@
 module.exports = {
   name: 'Ruby',
   nameMatchers: ['.rb', '.ru', '.gemspec'],
-  singleLineComment: ['#']
+  singleLineComment: ['#'],
+  multiLineComment: [{
+    start: '=begin',
+    middle: '',
+    end: '=end'
+  }]
 }
