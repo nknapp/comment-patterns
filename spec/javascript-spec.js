@@ -55,6 +55,10 @@ describe('comment-patterns', function () {
       {
         name: 'PHP',
         nameMatchers: ['.php', '.php3', '.php4', '.php5', '.fbp'],
+        multiLineComment: [
+          { apidoc: true, end: '*/', middle: '*', start: /\/\*\*/ },
+          { end: '*/', middle: '*', start: /\/\*/ }
+        ],
         singleLineComment: [ { start: '//' } ]
       }
     )
