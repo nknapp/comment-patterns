@@ -20,7 +20,7 @@ function stringify (obj) {
 }
 
 // load data for templates if needed
-verb.data({'langDB': require('./db-generated/base.js')})
+verb.data({ 'langDB': require('./db-generated/base.js') })
 
 /**
  * Helper to call the base function of this module

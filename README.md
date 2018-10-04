@@ -177,7 +177,7 @@ as `begin`-property in the result, but the parser-function can override it.
 * **{number}**: lineNr the line-number
 * `returns` **{object}**
 
-### [.parser](lib/detector.js#L67)
+### [.parser](lib/detector.js#L62)
 
 Helper function to create a parser from a `regex` that matches a string
 and a `resolver` that parses the
@@ -211,7 +211,7 @@ $ npm i -d && npm test
 
 ## Related
 
-[extract-comments](https://github.com/jonschlinkert/extract-comments): Extract code comments from string or from a glob of files.
+[extract-comments](https://www.npmjs.com/package/extract-comments): Uses esprima to extract line and block comments from a string of JavaScript. Also optionally… [more](https://www.npmjs.com/package/extract-comments) | [homepage](https://github.com/jonschlinkert/extract-comments)
 
 ## Author
 
