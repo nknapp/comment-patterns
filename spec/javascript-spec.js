@@ -63,6 +63,20 @@ describe('comment-patterns', function () {
       }
     )
   })
+
+  it('should work for scala. The regex-matcher should be replaced by string-matchers', function () {
+    patterns('test.scala').should.eql(
+      {
+        name: 'Scala',
+        nameMatchers: ['.scala'],
+        multiLineComment: [
+          { apidoc: true, end: '*/', middle: '*', start: /\/\*\*/ },
+          { end: '*/', middle: '*', start: /\/\*/ }
+        ],
+        singleLineComment: [ { start: '//' } ]
+      }
+    )
+  })
 })
 
 describe('comment-patterns.regex', function () {

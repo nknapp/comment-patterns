@@ -501,6 +501,30 @@ These are the base entries (no variations) of the database:
 ```
 
 
+### Scala
+```js
+{
+  srcFile: "scala.js",
+  name: "Scala",
+  nameMatchers: [".scala"],
+  multiLineComment: [{
+    start: /\/\*\*/,
+    middle: "*",
+    end: "*/",
+    apidoc: true
+  }, {
+    start: /\/\*/,
+    middle: "*",
+    end: "*/"
+  }],
+  singleLineComment: [{
+    start: "//"
+  }]
+}
+```
+
+
+
 ### SCSS
 ```js
 {
