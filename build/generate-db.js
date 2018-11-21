@@ -3,10 +3,9 @@ var fs = require('fs')
 var _ = require('lodash')
 var Generator = require('./generator.js')
 
-// Generate base directory
 var databaseDir = path.resolve(__dirname, '..', 'db-generated')
 if (!fs.existsSync(databaseDir)) {
-  fs.mkdir(databaseDir)
+  throw new Exception(databaseDir + " not found");
 }
 
 var generator = new Generator()
