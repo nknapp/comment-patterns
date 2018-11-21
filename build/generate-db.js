@@ -5,7 +5,7 @@ var Generator = require('./generator.js')
 
 var databaseDir = path.resolve(__dirname, '..', 'db-generated')
 if (!fs.existsSync(databaseDir)) {
-  throw new Exception(databaseDir + " not found");
+  throw new Error(databaseDir + ' not found')
 }
 
 var generator = new Generator()
