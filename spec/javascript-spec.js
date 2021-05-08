@@ -26,7 +26,7 @@ describe('comment-patterns', function () {
     patterns('test.js').should.eql(
       {
         name: 'JavaScript',
-        nameMatchers: ['.js'],
+        nameMatchers: ['.js', '.mjs'],
         multiLineComment: [
           { apidoc: true, end: '*/', middle: '*', start: /\/\*\*/ },
           { end: '*/', middle: '*', start: /\/\*/ }
@@ -40,7 +40,7 @@ describe('comment-patterns', function () {
     patterns('test.js').should.eql(
       {
         name: 'JavaScript',
-        nameMatchers: ['.js'],
+        nameMatchers: ['.js', '.mjs'],
         multiLineComment: [
           { apidoc: true, end: '*/', middle: '*', start: /\/\*\*/ },
           { end: '*/', middle: '*', start: /\/\*/ }
