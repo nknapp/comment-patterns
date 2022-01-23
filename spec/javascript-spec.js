@@ -148,9 +148,9 @@ describe('comment-patterns.codeContext', function () {
   it('should throw an error, if no code-context parser is defined for the language', function () {
     try {
       // non existing languauge
-      patterns.codeContext('test.scss')
+      patterns.codeContext('test.foo')
     } catch (e) {
-      e.message.should.equal("Cannot find module './languages/code-context/scss.js'")
+      e.message.should.equal("Cannot find language definition for 'test.foo'")
     }
   })
 
