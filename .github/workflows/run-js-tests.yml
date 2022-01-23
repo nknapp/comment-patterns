@@ -1,10 +1,7 @@
-name: Node.js CI
+name: Run JS Tests
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -13,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: [16.x, 17.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -22,6 +19,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: npm ci
-      - run: npm run build --if-present
+        run: npm install
+      - name: Run pretest setup
+        run: npm run pretest
       - run: npm test
